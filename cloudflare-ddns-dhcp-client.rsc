@@ -34,7 +34,7 @@
   :local cfGetHeader "Authorization: Bearer $cfAPIToken, Content-Type: application/json"
   :local cfDNSGet    ""
 
-  :onerror cfVerfyInfo in={
+  :onerror cfVerifyInfo in={
     :set cfDNSGet    ([/tool fetch mode=https http-method=get output=user http-header-field=$cfGetHeader url=$cfGetURL as-value]->"data")
   } do={:log error "[Cloudflare DDNS] domain credentials are incorrect or the server cannot be accessed"}
 
