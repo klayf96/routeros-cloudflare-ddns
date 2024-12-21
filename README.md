@@ -10,7 +10,7 @@ Cloudflare DDNS script for MikroTik RouterOS v7
 ### 🚀&nbsp; Features
 - Efficient as it runs on DHCP Client level.
 - Cloudflare DNS ID is automatically retrieved, and TTL and Proxied values are preserved as existing settings.
-- Supports both IPv4 and IPv6 addresses, and automatically selects DNS record type (A or AAAA) depending on the version.
+- Supports IPv4 addresses. (IPv6/SLAAC prefix delegated addresses are not supported yet.
 - It consists of simple code, so it runs smoothly even on low-end devices. (Tested on hAP ac lite)
 - Written for RouterOS v7, no external parsing script is required.
 
@@ -56,7 +56,7 @@ Cloudflare DDNS script for MikroTik RouterOS v7
   </p>
 </div>
 
-- IPv6 Address : Click [IPv6] - [DHCP Client]
+- ~~IPv6 Address : Click [IPv6] - [DHCP Client]~~ (Not supported yet)
 <div align="center">
   <p align="center">
     <a href="#">
