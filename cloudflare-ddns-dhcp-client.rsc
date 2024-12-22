@@ -1,4 +1,4 @@
-# Cloudflare DDNS script r1.32 for RouterOS v7 (DHCP Client)
+# Cloudflare DDNS script r1.33 for RouterOS v7 (DHCP Client)
 # by klayf <contact@klayf.com>
 
 :if ($bound=1) do={
@@ -17,8 +17,8 @@
 
   :if ($verifyAddr = true) do={
     :local prvCidr 10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,100.64.0.0/10;
-    :foreach verifyAddr in=$prvCidr do={
-      if ($wanAddr in $verifyAddr) do={
+    :foreach doVerifyAddr in=$prvCidr do={
+      if ($wanAddr in $doVerifyAddr) do={
         :log warning "[Cloudflare DDNS] private address has been leased"
         :onerror getPubAddr in={
           :local pubAddr ([/tool fetch mode=http url="http://checkip.amazonaws.com" output=user as-value]->"data")
