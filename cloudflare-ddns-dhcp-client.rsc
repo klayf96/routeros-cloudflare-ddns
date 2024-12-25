@@ -21,8 +21,8 @@
       if ($wanAddr in $doVerifyAddr) do={
         :log warning "[Cloudflare DDNS] private address has been leased"
         :onerror getPubAddr in={
-        :local pubAddr ([/tool fetch mode=http url="http://checkip.amazonaws.com" output=user as-value]->"data")
-        :set wanAddr ([:pick $pubAddr 0 ([:len $pubAddr] - 1)])
+          :local pubAddr ([/tool fetch mode=http url="http://checkip.amazonaws.com" output=user as-value]->"data")
+          :set wanAddr ([:pick $pubAddr 0 ([:len $pubAddr] - 1)])
         } do={:log error "[Cloudflare DDNS] public ip address cannot be resolved"; :error "err013"}
       }
     }
