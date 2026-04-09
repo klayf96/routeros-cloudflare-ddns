@@ -2,6 +2,7 @@
   :do {
     # Cloudflare DDNS script IPv4 r1.35 for RouterOS v7 (DHCP Client)
     # (c) 2023, 2026 klayf <contact@klayf.com>
+
     ######## Please edit below ########
 
     :local cfDomainName   "your.domain.com"
